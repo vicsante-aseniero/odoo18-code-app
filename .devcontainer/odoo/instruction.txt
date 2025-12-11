@@ -25,13 +25,13 @@ Check if Postgres Host is running
 $ pg_isready -d odoo18 -h postgres-dev -p 5432 -U odoo_user
 
 Initial run
-$ ./odoo/odoo-bin -i all --addons-path=./odoo/addons/,./extra_addons/openeducat/,./tutorials/ --database=odoo18 --db_user=odoo_user --db_password=jajnav5@
+$ ./odoo/odoo-bin -i all --addons-path=./odoo/addons/,./extra_addons/openeducat_erp/,./tutorials/ --database=odoo18 --db_user=odoo_user --db_password=jajnav5@
 
 Run Odoo Sourcecode
 ===================
-$ ./odoo-bin -u all --addons-path=./odoo/addons,./extra_addons/openeducat/,./tutorials/ --database=odoo18 --db_user=odoo_user --db_password=jajnav5@
+$ ./odoo/odoo-bin -u all --addons-path=./odoo/addons,./extra_addons/openeducat_erp/,./tutorials/ --database=odoo18 --db_user=odoo_user --db_password=jajnav5@
 
 Run Odoo Sourcecode dev mode
 ============================
-$ ./odoo-bin -c ./odoo.conf --dev=all
-$ ./odoo-bin -c ./config/odoo.conf --addons-path=./odoo/addons/,./extra-addons/openeducat/,./tutorials/ --database=odoo18 --db_user=odoo_user --db_password=jajnav5@ --dev=all
+$ ./odoo/odoo-bin -c ./odoo.conf --dev=all
+$ ./odoo/odoo-bin -c ./config/odoo.conf --addons-path=./odoo/addons/,./extra-addons/openeducat_erp/,./tutorials/ --database=odoo18 --db_user=odoo_user --db_password=jajnav5@ --dev=all
