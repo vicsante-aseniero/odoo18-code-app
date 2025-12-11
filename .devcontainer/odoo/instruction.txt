@@ -22,16 +22,16 @@ Verify if its create via pgAdmin4 Windows app.
 
 Check if Postgres Host is running
 =================================
-$ pg_isready -d odoo -h postgres-dev -p 5432 -U odoo_user
+$ pg_isready -d odoo18 -h postgres-dev -p 5432 -U odoo_user
 
 Initial run
-$ ./odoo-bin -i web,openeducat_erp --addons-path=addons/,extra-addons/openeducat/,tutorials/ --database=odoo --db_user=odoo_user --db_password=jajnav5@
+$ ./odoo/odoo-bin -i all --addons-path=./odoo/addons/,./extra_addons/openeducat/,./tutorials/ --database=odoo18 --db_user=odoo_user --db_password=jajnav5@
 
 Run Odoo Sourcecode
 ===================
-$ ./odoo-bin -u web,openeducat_erp --addons-path=addons,extra-addons/openeducat/,tutorials/ --database=odoo --db_user=odoo_user --db_password=jajnav5@
+$ ./odoo-bin -u all --addons-path=./odoo/addons,./extra_addons/openeducat/,./tutorials/ --database=odoo18 --db_user=odoo_user --db_password=jajnav5@
 
 Run Odoo Sourcecode dev mode
 ============================
 $ ./odoo-bin -c ./odoo.conf --dev=all
-$ ./odoo-bin -c ./odoo.conf --addons-path=addons/,extra-addons/openeducat/,tutorials/ --database=odoo --db_user=odoo_user --db_password=jajnav5@ --dev=all
+$ ./odoo-bin -c ./config/odoo.conf --addons-path=./odoo/addons/,./extra-addons/openeducat/,./tutorials/ --database=odoo18 --db_user=odoo_user --db_password=jajnav5@ --dev=all
