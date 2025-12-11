@@ -13,11 +13,11 @@ ALTER DEFAULT PRIVILEGES IN SCHEMA public GRANT ALL PRIVILEGES ON TABLES TO odoo
 GRANT odoo_admin TO odoo_user;
 
 -- Create the Keycloak database and grant privileges to the role/user.
-CREATE DATABASE odoo OWNER odoo_user;
+CREATE DATABASE odoo18 OWNER odoo_user;
 
 -- Optional: Grant all privileges on the database to the role and user.
-GRANT ALL PRIVILEGES ON DATABASE odoo TO odoo_admin;
-GRANT ALL PRIVILEGES ON DATABASE odoo TO odoo_user;
+GRANT ALL PRIVILEGES ON DATABASE odoo18 TO odoo_admin;
+GRANT ALL PRIVILEGES ON DATABASE odoo18 TO odoo_user;
 
 -- Optional: Grant all privileges on the database to the role and user.
 GRANT ALL PRIVILEGES ON DATABASE postgres TO odoo_admin;
