@@ -1,0 +1,116 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/python
+{
+	"name": "Odoo 18 Dev Environment",
+	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
+	"dockerComposeFile": "docker-compose.yml",
+	"service": "web",
+	"workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
+	"shutdownAction": "stopCompose",
+
+	// Features to add to the dev container. More info: https://containers.dev/features.
+	"features": {
+		"ghcr.io/anthropics/devcontainer-features/claude-code:1.0": {},
+		"ghcr.io/devcontainers/features/aws-cli:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers/features/git:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers/features/github-cli:1": {
+			"installDirectlyFromGitHubRelease": true,
+			"version": "latest"
+		},
+		"ghcr.io/localstack/devcontainer-feature/localstack-cli:0": {
+			"awslocal": true,
+			"samlocal": true,
+			"installUsingPython": true,
+			"version": "latest"
+		},
+		"ghcr.io/robbert229/devcontainer-features/postgresql-client:1": {
+		},
+		"ghcr.io/devcontainers-extra/features/node-asdf:0": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers/features/node:1": {
+			"nodeGypDependencies": true,
+			"installYarnUsingApt": true,
+			"version": "lts",
+			"pnpmVersion": "latest",
+			"nvmVersion": "latest"
+		},
+		"ghcr.io/hspaans/devcontainer-features/pytest:2": {
+			"version": "latest",
+			"plugins": "pytest-testinfra"
+		},
+		"ghcr.io/devcontainers-extra/features/black:2": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/flake8:2": {
+			"version": "latest",
+			"plugins": "flake8-black flake8-isort flake8-print flake8-bandit flake8-pylint flake8-builtins flake8-spellcheck flake8-pytest-style flake8-django flake8-fastapi"
+		},
+		"ghcr.io/devcontainers-extra/features/pipenv:2": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/poetry:2": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/pylint:2": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/uv:1": {},
+		"ghcr.io/devcontainers-extra/features/zsh-plugins:0": {
+			"plugins": "ssh-agent npm",
+			"omzPlugins": "https://github.com/zsh-users/zsh-autosuggestions",
+			"username": "root"
+		}
+	},
+
+	// Use 'forwardPorts' to make a list of ports inside the container available locally.
+	"forwardPorts": [8069, 8071],
+
+	// Use 'postCreateCommand' to run commands after the container is created.
+	"postCreateCommand": "bash .devcontainer/script.sh && bash .devcontainer/odoo.sh",
+
+	// Configure tool-specific properties.
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"anthropic.claude-code",
+				"codeium.codeium",
+				"cweijan.vscode-postgresql-client2",
+				"cyrilletuzi.angular-schematics",
+				"dbaeumer.vscode-eslint",
+				"docsmsft.docs-yaml",
+				"EditorConfig.EditorConfig",
+				"esbenp.prettier-vscode",
+				"GitHub.copilot",
+				"GitHub.copilot-chat",
+				"google.geminicodeassist",
+				"humao.rest-client",
+				"kilocode.kilo-code",
+				"ms-azuretools.vscode-containers",
+				"ms-azuretools.vscode-docker",				
+				"ms-python.autopep8",
+				"ms-python.black-formatter",
+				"ms-python.debugpy",
+				"ms-python.isort",
+				"ms-python.pylint",
+				"ms-python.python",
+				"ms-python.vscode-pylance",
+				"ms-vscode-remote.remote-containers",
+				"ms-vscode-remote.vscode-remote-extensionpack",
+				"ms-vscode-remote.remote-wsl"
+			]
+		},
+		"settings": {
+			"python.pythonPath": "/usr/bin/python3",
+			"python.linting.pylintEnabled": true,
+			"python.linting.enabled": true
+		}
+	}
+
+	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
+	// "remoteUser": "root"
+}

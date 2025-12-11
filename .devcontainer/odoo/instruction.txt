@@ -1,0 +1,37 @@
+Run this in the bash terminal i.e. WSL Ubuntu.
+
+$ docker cp <path_to_sql_file> <container_name>:/tmp/<file_name>
+$ docker exec -it <container_name> psql -U <username> -d <database_name> -f /tmp/<file_name>
+
+See example below:
+$ docker cp ./.devcontainer/odoo/setup.sql postgres-dev:/tmp/odoo-setup.sql
+$ docker exec -it postgres-dev psql -U postgres -d postgres -f /tmp/odoo-setup.sql
+
+Kill Port 
+$ sudo lsof -i :8069
+$ sudo kill -9 <PID>
+$ fuser -n tcp -k 8069
+
+Path to sql file: .devcontainer/odoo/setup.sql
+Container name: postgres-dev
+Username: postgres
+Database name: postgres
+
+After running the devcontainer. Run this for the first time in your bash terminal e.g. WSL Ubuntu where your project resides.
+Verify if its create via pgAdmin4 Windows app.
+
+Check if Postgres Host is running
+=================================
+$ pg_isready -d odoo -h postgres-dev -p 5432 -U odoo_user
+
+Initial run
+$ ./odoo-bin -i web,openeducat_erp --addons-path=addons/,extra-addons/openeducat/,tutorials/ --database=odoo --db_user=odoo_user --db_password=jajnav5@
+
+Run Odoo Sourcecode
+===================
+$ ./odoo-bin -u web,openeducat_erp --addons-path=addons,extra-addons/openeducat/,tutorials/ --database=odoo --db_user=odoo_user --db_password=jajnav5@
+
+Run Odoo Sourcecode dev mode
+============================
+$ ./odoo-bin -c ./odoo.conf --dev=all
+$ ./odoo-bin -c ./odoo.conf --addons-path=addons/,extra-addons/openeducat/,tutorials/ --database=odoo --db_user=odoo_user --db_password=jajnav5@ --dev=all
