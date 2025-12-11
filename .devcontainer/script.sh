@@ -46,9 +46,6 @@ echo -e "\n"
 # Update apt-get
 sudo apt-get update -y
 
-# Done installing needed package(s)
-echo "Done version verifications and installation of needed package(s)....."
-
 echo -e "\nInstalling Starship\n"
 read -p "Press enter to continue..."
 echo -e "\n"

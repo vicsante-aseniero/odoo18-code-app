@@ -23,7 +23,7 @@ read -p "Press enter to continue..."
 echo -e "\n"
 
 # Install the required Python packages
-pip3 install --user -r ./requirements.txt
+pip3 install --user -r ./odoo/requirements.txt
 pip list
 
 # Done installing needed package(s)
