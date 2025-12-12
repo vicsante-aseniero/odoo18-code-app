@@ -36,4 +36,4 @@ USER odoo
 EXPOSE 8069 8071
 
 # Set the entrypoint to run Odoo
-CMD ["/usr/bin/python3", "/usr/lib/python3/dist-packages/odoo/odoo-bin", "--addons-path", "/mnt/extra-addons,/mnt/tutorials"]
+CMD ["/usr/bin/python3", "/usr/lib/python3/dist-packages/odoo/odoo-bin", "-c", "/etc/odoo/odoo.conf"]
