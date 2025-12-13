@@ -5,7 +5,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    container_name: odoo_dev_web
+    container_name: odoo18_dev_web
     user: "root"
     environment:
       # Updated HOST to point to the external PostgreSQL container's name
