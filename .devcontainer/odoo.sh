@@ -16,7 +16,7 @@ sudo apt-get update -y
 sudo apt-get install python3-pip -y
 pip install --upgrade pip
 pip3 install pyinotify watchdog
-
+pip3 install Babel
 
 echo -e "\nInstalling Odoo required Python packages\n"
 read -p "Press enter to continue..."
